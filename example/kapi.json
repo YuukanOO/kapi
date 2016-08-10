@@ -1,0 +1,5 @@
+{
+    "destination": "./build",
+    "apiSource": "./api",
+    "styleSource": "./styles"
+}

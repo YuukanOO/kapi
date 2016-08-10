@@ -1,5 +1,5 @@
 {
     "destination": "./build",
-    "apiSource": "./api",
-    "styleSource": "./styles"
+    "apidoc": "./api",
+    "kss": "./styles"
 }

@@ -9,3 +9,15 @@
 Kapi uses `kss-node` and `apidoc-core` to parse your source code and to generate json files ready to be read.
 
 Those files are then processed by a custom `metalsmith` plugin to generate a static website covering both your REST APIs and your styleguide.
+
+## Core Development
+
+- `git clone git@github.com:YuukanOO/kapi`
+- `npm install`
+- `npm start`
+
+This will load kapi for the `/example` folder.
+
+## Plugin Development
+
+TODO

@@ -4,9 +4,157 @@
  *  Matt is a simple sass declaration file which aims to provides a solid foundation
  *  for BEM based stylesheets by providing variables with semantic names.
  *
+ *  Heavily inspired by Google Guidelines, try to make it more simple and concise for the web.
+ *
  *  By Julien LEICHER
  */
 
-body {
-    background: red;
+/**
+ * GRIDS
+ *
+ * Defines baseline grids value
+ */
+
+$component-baseline: dp(8);
+$iconography-baseline: dp(4);
+$type-baseline: dp(4);
+
+/**
+ * FONTS
+ *
+ * Fonts are the heart of beautiful typography so choose wisely!
+ */
+
+$body-font: Roboto, Helvetica, Arial, sans-serif;
+$heading-font: $body-font;
+
+$font-leadings: (
+    display2: dp(48),
+    display1: dp(40),
+    headline: dp(32),
+    title: dp(28),
+    subheading: dp(24),
+    body: dp(20),
+    caption: dp(20) 
+);
+
+$font-sizes: (
+    display2: dp(45),
+    display1: dp(34),
+    headline: dp(24),
+    title: dp(20),
+    subheading: dp(16),
+    body: dp(14),
+    caption: dp(12) 
+);
+
+$font-thin: 100;
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+$font-black: 900;
+
+$font-weights: (
+    display2: $font-regular,
+    display1: $font-regular,
+    headline: $font-regular,
+    title: $font-medium,
+    subheading: $font-regular,
+    body: $font-regular,
+    caption: $font-regular
+);
+
+/**
+ * COLORS
+ */
+
+// Primary & accent colors
+
+$black: #000000;
+$white: #FFFFFF;
+$primary-color: #8BC34A;
+$primary-color--darker: #558B2F;
+$primary-color--lighter: #9CCC65;
+$accent-color: #2196F3;
+
+// Text colors
+
+$primary-text-color--light: rgba($black, 0.87);
+$primary-text-color--dark: $white;
+
+$secondary-text-color--light: rgba($black, 0.54);
+$secondary-text-color--dark: rgba($white, 0.7);
+
+$disabled-text-color--light: rgba($black, 0.38);
+$disabled-text-color--dark: rgba($white, 0.5);
+$hint-text-color--light: $disabled-text-color--light;
+$hint-text-color--dark: $disabled-text-color--dark;
+
+$divider-color--light: rgba($black, 0.12);
+$divider-color--dark: rgba($white, 0.12);
+
+$icon-color--active--light: rgba($black, 0.54);
+$icon-color--active--dark: $white;
+$icon-color--inactive--light: rgba($black, 0.38);
+$icon-color--inactive--dark: rgba($white, 0.5);
+
+// Themes colors
+
+/**
+ * FUNCTIONS
+ */
+
+// font-leading($key)
+//
+// Retrieve a line-height for a type size.
+//
+// $key     -   Type size to retrieve
+@function font-leading($key) {
+    @return map-get($font-leadings, $key);
+}
+
+// font-size($key)
+//
+// Retrieve a font size for a type size.
+//
+// $key     -   Type size to retrieve
+@function font-size($key) {
+    @return map-get($font-sizes, $key);
+}
+
+// font-size($key)
+//
+// Retrieve a font weight for a type size.
+//
+// $key     -   Type size to retrieve
+@function font-weight($key) {
+    @return map-get($font-weights, $key);
+}
+
+// dp($value)
+//
+// Retrieve a density-independent pixels for the given value. Not really useful
+// for now but who knows?
+//
+// $value   -   Value to compute
+@function dp($value) {
+    @return $value * 1px;
+}
+
+/**
+ * MIXINS
+ */
+
+// font($key, $font-family: $body-font)
+//
+// Includes basic font properties based on the type size provided.
+//
+// $key         -   Type size to apply
+// $font-family -   Font family to use
+@mixin font($key, $font-family: $body-font) {
+    font-family: $font-family;
+    font-size: font-size($key);
+    line-height: font-leading($key);
+    font-weight: font-weight($key);
 }

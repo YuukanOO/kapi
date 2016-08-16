@@ -15,9 +15,14 @@
  * Defines baseline grids value
  */
 
-$component-baseline: dp(8);
-$iconography-baseline: dp(4);
-$type-baseline: dp(4);
+$component-baseline: 8px;
+$iconography-baseline: 4px;
+$type-baseline: 4px;
+
+$component-vertical-spacing: $component-baseline * 2;
+$component-vertical-spacing--small: $component-baseline;
+$component-horizontal-spacing: $component-vertical-spacing;
+$component-horizontal-spacing--small: $component-vertical-spacing--small;
 
 /**
  * FONTS
@@ -29,23 +34,23 @@ $body-font: Roboto, Helvetica, Arial, sans-serif;
 $heading-font: $body-font;
 
 $font-leadings: (
-    display2: dp(48),
-    display1: dp(40),
-    headline: dp(32),
-    title: dp(28),
-    subheading: dp(24),
-    body: dp(20),
-    caption: dp(20) 
+    display2: 48,
+    display1: 40,
+    headline: 32,
+    title: 28,
+    subheading: 24,
+    body: 20,
+    caption: 20 
 );
 
 $font-sizes: (
-    display2: dp(45),
-    display1: dp(34),
-    headline: dp(24),
-    title: dp(20),
-    subheading: dp(16),
-    body: dp(14),
-    caption: dp(12) 
+    display2: 45,
+    display1: 34,
+    headline: 24,
+    title: 20,
+    subheading: 16,
+    body: 14,
+    caption: 12 
 );
 
 $font-thin: 100;
@@ -101,6 +106,12 @@ $icon-color--inactive--dark: rgba($white, 0.5);
 
 // Themes colors
 
+$background-color--light: #F2F2F2;
+$background-color--dark: #303030;
+
+$dialog-color--light: $white;
+$dialog-color--dark: #424242;
+
 /**
  * FUNCTIONS
  */
@@ -111,7 +122,7 @@ $icon-color--inactive--dark: rgba($white, 0.5);
 //
 // $key     -   Type size to retrieve
 @function font-leading($key) {
-    @return map-get($font-leadings, $key);
+    @return dp(map-get($font-leadings, $key));
 }
 
 // font-size($key)
@@ -120,7 +131,7 @@ $icon-color--inactive--dark: rgba($white, 0.5);
 //
 // $key     -   Type size to retrieve
 @function font-size($key) {
-    @return map-get($font-sizes, $key);
+    @return dp(map-get($font-sizes, $key));
 }
 
 // font-size($key)

@@ -1,0 +1,12 @@
+<div class="content__sidebar">
+    <div class="menu">
+        {{#each apidoc}}
+        <div class="menu__group">
+            <div class="group__title">{{title}}</div>
+            {{#each data}}
+            <div class="menu__item">{{name}}</div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+</div>

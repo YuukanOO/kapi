@@ -1,7 +1,13 @@
 {{> header}}
-<h1>{{title}}</h1>
+{{> menu_apidoc}}
 
-{{#each data}}
-    <h2>{{type}} - {{url}}</h2>
-{{/each}}
+<div class="content__main">
+    <div class="main">
+        <h1>{{title}}</h1>
+
+        {{#each data}}
+            <h2>{{type}} - {{url}}</h2>
+        {{/each}}
+    </div>
+</div>
 {{> footer}}

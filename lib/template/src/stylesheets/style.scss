@@ -1,1 +1,67 @@
+@import "normalize";
 @import "matt";
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    background-color: $primary-color;
+    padding: $component-vertical-spacing--small $component-horizontal-spacing;
+    display: flex;
+
+    &__title {
+        @include font(title);
+
+        color: $primary-text-color--dark;
+    }
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+
+    &__main {
+        flex-grow: 1;
+        margin: $component-vertical-spacing $component-horizontal-spacing;
+    }
+
+    &__sidebar {
+        background-color: $background-color--light;
+        padding: $component-vertical-spacing $component-horizontal-spacing;
+        max-width: dp(200);
+        width: 100%;
+    }
+}
+
+.main {
+    max-width: dp(900);
+    margin: 0 auto;
+}
+
+.menu {
+    &__group {
+        margin-bottom: $component-vertical-spacing;
+    }
+
+    &__item {
+        @include font(body);
+        color: $secondary-text-color--light;
+    }
+}
+
+.group__title {
+    @include font(body);
+    color: $primary-text-color--light;
+    text-transform: uppercase;
+    font-weight: $font-medium;
+}

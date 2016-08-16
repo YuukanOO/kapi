@@ -4,7 +4,7 @@
   "description": "Templates for API generators",
   "main": "lib/index.js",
   "scripts": {
-    "start": "cd example && node ../lib/index.js",
+    "start": "cd example && node ../lib/index.js && static build/build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Julien LEICHER",
@@ -26,6 +26,7 @@
     "eslint": "^3.2.2",
     "eslint-plugin-react": "^6.0.0",
     "babel-eslint": "^6.1.2",
-    "eslint-config-defaults": "^9.0.0"
+    "eslint-config-defaults": "^9.0.0",
+    "node-static": "^0.7.8"
   }
 }
